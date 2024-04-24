@@ -1,0 +1,32 @@
+@import '../common/mixin.scss';
+
+.nb-editor, .nb-ui-layer {
+  [data-nb-block-type="MERMAID"] {
+    .nb-block-content > div {
+      @include embed-frame;
+      display: flex;
+      flex-direction: column;
+      font-family: monospace;
+
+      [data-nb-dom-type="text"] {
+        padding: 1em;
+        line-height: 1.5em;
+      }
+      .nb-mermaid-draw {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    
+        &.mermaid-syntax-error {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+div[id^='dnb-mermaid-'] {
+  visibility: hidden;
+}

@@ -1,0 +1,39 @@
+.nb-editor, .nb-ui-layer {
+  [data-nb-dom-type="block"] {
+    .nb-block-handle {
+      @include no-editable;
+
+      pointer-events: auto;
+      touch-action: none;
+      display: flex;
+      z-index: 250;
+      width: $block-side;
+      flex-shrink: 0;
+
+      fill: var(--fg-color);
+      padding: 0 2px;
+      cursor: pointer;
+
+      .dragger {
+        flex: 1;
+        display: flex;
+        border-radius: 2px;
+        svg {
+          flex: 1;
+          cursor: grab;
+          &:active { cursor: grabbing; }
+
+          // -webkit-touch-callout: none; - For IMG tag
+        }
+        transform-origin: center 16px;
+        @include fade-in-scale;
+      }
+
+      &:hover {
+        .dragger {
+          background-color: var(--reverse-transparent-bg-color);
+        }
+      }
+    }
+  }
+}

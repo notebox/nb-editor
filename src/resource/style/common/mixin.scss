@@ -1,0 +1,111 @@
+/** @category system */
+@mixin border-radius {
+  border-radius: 2px;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// @category note */
+@mixin note-padding {
+  @media (min-width: 1136px) {
+    padding-left: $note-padding-1248;
+    padding-right: $note-padding-1248;
+  }
+  @media (min-width: 1024px) and (max-width: 1135px) {
+    padding-left: $note-padding-1024;
+    padding-right: $note-padding-1024;
+  }
+  @media (min-width: 800px) and (max-width: 1023px) {
+    padding-left: $note-padding-800;
+    padding-right: $note-padding-800;
+  }
+  @media (max-width: 799px) {
+    padding-left: $icon-size;
+    padding-right: $icon-size;
+  }
+}
+
+@mixin nbdb-note-padding {
+  @media (min-width: 1136px) {
+    padding-left: $nbdb-note-padding-1248;
+    padding-right: $nbdb-note-padding-1248;
+  }
+  @media (min-width: 1024px) and (max-width: 1135px) {
+    padding-left: $nbdb-note-padding-1024;
+    padding-right: $nbdb-note-padding-1024;
+  }
+  @media (min-width: 800px) and (max-width: 1023px) {
+    padding-left: $nbdb-note-padding-800;
+    padding-right: $nbdb-note-padding-800;
+  }
+  @media (max-width: 799px) {
+    padding-left: 0;
+    padding-right: $icon-size;
+  }
+}
+
+/** @category block-ui */
+@mixin pre-text-symbol {
+  width: $icon-size;
+  height: 1.2em;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  @include no-editable;
+}
+
+@mixin embed-frame {
+  border: 1px solid rgba(170, 170, 170, 0.2);
+  border-radius: 2px;
+}
+
+@mixin sticky-float {
+  background-color: var(--thick-transparent-bg-color);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+/** @category transition */
+@mixin fade-in {
+  animation: fade-in 0.3s;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@mixin fade-in-scale {
+  animation: fade-in-scale 0.3s;
+}
+
+@keyframes fade-in-scale {
+  from { opacity: 0; transform: scale(0); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@mixin parent-scale-height {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+  &.open {
+    max-height: 100vh;
+    transition: max-height 0.3s ease-in 0.3s;
+  }
+}
+
+/** @category nb-ui */
+@mixin metal-background {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+
+  background-color: var(--thick-transparent-bg-color);
+}

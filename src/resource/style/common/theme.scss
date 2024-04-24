@@ -1,0 +1,51 @@
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --monospace-font-family: monospace, Monaco, Courier New, Courier;
+  --ui-font-size: 14px;
+
+  --accent-color: #f3a100;
+  --thick-transparent-accent-color: rgba(230, 162, 25, 0.8);
+  --thin-transparent-accent-color: rgba(230, 162, 25, 0.2);
+  --transparent-accent-color: rgba(230, 162, 25, 0.4);
+
+  --border-radius: 5px;
+  --border-radius-form: 2px;
+  --label-fg-color: white;
+  --label-bg-color: rgba(0, 0, 0, 0.5);
+
+  .black-theme {
+    --bg-color: black;
+    --fg-color: #f4f4f4;
+    --transparent-bg-color: rgba(0, 0, 0, 0.5);
+    --thick-transparent-bg-color: rgba(0, 0, 0, 0.8);
+    --thicker-transparent-bg-color: rgba(0, 0, 0, 0.9);
+    --reverse-transparent-bg-color: rgba(255, 255, 255, 0.2);
+    --box-shadow: rgba(255, 255, 255, 1) 0px 0px 0px 1px, rgba(255, 255, 255, 0.4) 0px 2px 4px;
+  }
+  .light-theme {
+    --bg-color: white;
+    --fg-color: black;
+    --transparent-bg-color: rgba(255, 255, 255, 0.5);
+    --thick-transparent-bg-color: rgba(255, 255, 255, 0.8);
+    --thicker-transparent-bg-color: rgba(255, 255, 255, 0.9);
+    --reverse-transparent-bg-color: rgba(0, 0, 0, 0.2);
+    --box-shadow: rgba(0, 0, 0, 1) 0px 0px 0px 1px, rgba(0, 0, 0, 0.4) 0px 2px 4px;
+  }
+
+  /** @category nb-colors fg */
+  --nb-color-red: rgba(255, 50, 25, 1);
+  --nb-color-orange: rgba(255, 130, 15, 1);
+  --nb-color-yellow: rgba(255, 180, 0, 1);
+  --nb-color-green: rgba(90, 180, 45, 1);
+  --nb-color-blue: rgba(50, 125, 255, 1);
+  --nb-color-purple: rgba(165, 80, 255, 1);
+  --nb-color-gray: rgba(170, 170, 170, 1);
+  /** @category nb-colors bg */
+  --nb-bgcolor-red: rgba(255, 20, 0, 0.4);
+  --nb-bgcolor-orange: rgba(255, 140, 0, 0.4);
+  --nb-bgcolor-yellow: rgba(255, 210, 0, 0.4);
+  --nb-bgcolor-green: rgba(130, 200, 80, 0.4);
+  --nb-bgcolor-blue: rgba(80, 140, 255, 0.4);
+  --nb-bgcolor-purple: rgba(180, 110, 255, 0.4);
+  --nb-bgcolor-gray: rgba(160, 160, 160, 0.4);
+}

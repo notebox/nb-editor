@@ -1,0 +1,14 @@
+@import '../../common/var.scss';
+@import '../../common/mixin.scss';
+
+.nb-editor {
+  [data-nb-dom-type="block"].nb-dragging-prev {
+    box-shadow: 0 -2px var(--accent-color);
+  }
+  [data-nb-dom-type="block"].nb-dragging-next {
+    box-shadow: 0 2px var(--accent-color);
+  }
+  [data-nb-dom-type="block"] {
+    transition: box-shadow ease 0.3s 0s;
+  }
+}

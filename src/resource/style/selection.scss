@@ -1,0 +1,114 @@
+/** @category browser level */
+@mixin selectable($value) {
+  -webkit-user-select: $value; /** @verbose Safari */        
+  -moz-user-select: $value; /** @verbose Firefox */
+  -ms-user-select: $value; /** @verbose IE10+/Edge */
+  user-select: $value; /** @verbose Standard */
+}
+
+@mixin editable {
+  outline: none;
+  cursor: text;
+  -webkit-user-modify: read-write-plaintext-only;
+  @include selectable(text);
+}
+
+@mixin no-editable {
+  @include selectable(none);
+  -webkit-user-modify: read-only;
+}
+
+@mixin no-editable-but-searchable {
+  .nb-root:not(.nb-searching) & {
+    @include no-editable;
+  }
+}
+
+@mixin select-all {
+  @include selectable(all);
+  -webkit-user-modify: read-only;
+}
+
+@mixin placeholder {
+  &:empty::before {
+    opacity: 0.2;
+    content: attr(placeholder);
+    pointer-events: none;
+    display: block; /** @purpose Firefox */
+  }
+}
+
+.nb-no-editable {
+  @include no-editable;
+}
+
+.nb-no-editable-but-searchable {
+  @include no-editable-but-searchable;
+}
+
+/** @purpose base structure */
+.nb-editor {
+  -webkit-user-modify: read-only;
+
+  &[contenteditable="true"] {
+    -webkit-user-modify: read-write;
+    // -webkit-user-modify: read-write-plaintext-only;
+  }
+}
+
+[contenteditable="false"] {
+  cursor: default;
+}
+
+[contenteditable="true"] {
+  @include placeholder;
+  outline: none;
+  cursor: text;
+
+  -webkit-user-modify: read-write;
+  @include selectable(text);
+}
+
+/** @purpose software keyboard on void */
+[contenteditable], [tabindex="-1"] {
+  outline: none;
+}
+
+/** @purpose selection color */
+html, body {
+  caret-color: var(--accent-color);
+}
+
+::selection {
+  background: var(--transparent-accent-color);
+}
+::-moz-selection {
+  background: var(--transparent-accent-color);
+}
+
+/** @category NB level */
+.nb-ui-layer-selection {
+  pointer-events: none;
+  overflow: hidden;
+  inset: 0;
+  position: absolute;
+  z-index: 200;
+
+  .nb-ui-layer-selection-container {
+    overflow: hidden;
+    inset: 0;
+    position: absolute;
+
+    #nb-ui-selection-rect {
+      position: absolute;
+      // background-color: var(--thin-transparent-accent-color);
+      // border: 1px solid var(--transparent-accent-color);
+    }
+
+    .nb-ui-selection-block {
+      position: absolute;
+      background-color: var(--thin-transparent-accent-color);
+      border-radius: var(--border-radius);
+    }
+  }
+}

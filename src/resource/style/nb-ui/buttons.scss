@@ -1,0 +1,142 @@
+@mixin hover-like-btn {
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  &:hover {
+    background-color: var(--reverse-transparent-bg-color);
+  }
+}
+
+.nbdb-adder {
+  @include hover-like-btn;
+
+  width: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+
+  .plus-icon {
+    height: 0.6rem;
+  }
+}
+
+.nb-ui-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 25px;
+  border: 1px solid var(--fg-color);
+  border-radius: var(--border-radius-form);
+  cursor: pointer;
+
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  transition-property: background-color;
+
+  font-size: 0.8em;
+  padding: 0 0.5rem;
+
+  &:not(.style-label) {
+    @include no-editable;
+  }
+
+  &:hover {
+    background-color: var(--reverse-transparent-bg-color);
+  }
+
+  &.style-icon {
+    border: 1px solid var(--reverse-transparent-bg-color);
+    border-radius: var(--border-radius);
+    padding: 4px;
+    font-size: 12px;
+    height: 14px;
+    width: 14px;
+    background-color: var(--nb-bgcolor-gray);
+    justify-content: center;
+
+    &:hover {
+      background-color: var(--transparent-bg-color);
+    }
+  }
+
+  &.style-label {
+    border: 1px solid var(--reverse-transparent-bg-color);
+    border-radius: var(--border-radius);
+    padding: 4px;
+    font-weight: bold;
+    font-size: 12px;
+    height: 14px;
+    min-width: 128px;
+    background-color: var(--nb-bgcolor-gray);
+    justify-content: flex-start;
+
+    @include no-editable-but-searchable;
+
+    &:hover {
+      background-color: var(--transparent-bg-color);
+    }
+  }
+
+  &.role-cancel {
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+
+    &:hover {
+      color: var(--bg-color);
+      background-color: var(--fg-color);
+    }
+  }
+
+  &.role-delete {
+    background-color: var(--nb-bgcolor-red);
+
+    &:hover {
+      color: var(--fg-color);
+      background-color: var(--nb-color-red);
+    }
+  }
+
+  &.role-default {
+    font-weight: bold;
+    color: var(--nb-color-orange);
+    background-color: var(--bg-color);
+
+    &:hover {
+      color: var(--bg-color);
+      background-color: var(--accent-color);
+    }
+  }
+
+  &.role-adder {
+    padding: 0;
+    width: 25px;
+
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--fg-color);
+    }
+
+    &:hover {
+      color: var(--bg-color);
+      background-color: var(--fg-color);
+      svg {
+        fill: var(--bg-color);
+      }
+    }
+  }
+
+  &[data-nb-disabled="true"] {
+
+    &,
+    &:hover {
+      cursor: default;
+      color: var(--nb-color-gray);
+      background-color: var(--nb-bgcolor-gray);
+    }
+  }
+}

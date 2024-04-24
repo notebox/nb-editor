@@ -1,0 +1,6 @@
+.is-hoverable {
+  cursor: pointer;
+  &:hover {
+    background-color: var(--reverse-transparent-bg-color);
+  }
+}

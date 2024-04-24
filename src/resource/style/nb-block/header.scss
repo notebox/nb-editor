@@ -1,0 +1,23 @@
+@mixin size($size) {
+  & > .nb-block-handle {
+    padding-top: calc(#{$size} * 0.25);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: $size;
+    margin: 0;
+  }
+}
+
+.nb-editor, .nb-ui-layer {
+  [data-nb-block-type="H1"] {
+    @include size(2em);
+  }
+
+  [data-nb-block-type="H2"] {
+    @include size(1.5em);
+  }
+
+  [data-nb-block-type="H3"] {
+    @include size(1.2em);
+  }
+}

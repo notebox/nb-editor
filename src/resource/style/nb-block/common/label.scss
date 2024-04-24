@@ -1,0 +1,24 @@
+@import '../../common/mixin.scss';
+
+.nbdb-label {
+  display: inline-block;
+  padding: 0.1rem 0.2rem;
+  border: 1px solid var(--reverse-transparent-bg-color);
+  border-radius: var(--border-radius);
+
+  min-width: 1.4em;
+  line-height: 1.4em;
+  text-align: center;
+  min-height: 1em;
+  max-width: 10rem;
+
+  @include ellipsis;
+  @include no-editable-but-searchable;
+
+  &.hoverable {
+    cursor: pointer;
+    &:hover {
+      color: var(--reverse-transparent-bg-color);
+    }
+  }
+}

@@ -1,0 +1,36 @@
+#nbdb-edit-fields, #nbdb-sorting {
+  .nb-ui-section-wrap {
+    min-width: 256px;
+  }
+}
+
+#nbdb-labels-picker, #nbdb-edit-labels {
+  .nb-ui-section-wrap {
+    min-width: 256px;
+  }
+
+  .nbdb-labels {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--fg-color);
+    min-height: 1.5em;
+    margin: 0 1rem;
+  }
+}
+
+#nbdb-date-picker {
+  .nb-ui-content {
+    flex: 1;
+    display: flex;
+    justify-self: stretch;
+
+    input {
+      margin: 0 1rem;
+      flex: 1;
+      font-size: 1em;
+      font-weight: bold;
+      color: var(--bg-color);
+    }
+  }
+}

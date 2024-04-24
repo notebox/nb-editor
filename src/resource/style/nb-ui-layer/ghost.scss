@@ -1,0 +1,39 @@
+// dragger
+.nb-ui-layer {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  overflow: hidden;
+
+  &.dragging {
+    z-index: 500;
+  }
+
+  #nb-ui-layer-ghost {
+    position: relative;
+    z-index: 500;
+    * {
+      z-index: 501;
+    }
+    .nb-block-handle {
+      visibility: hidden;
+    }
+    max-width: max-content;
+    #nb-ui-layer-ghost-content {
+      max-width: max-content;
+    }
+  }
+
+  .dragging {
+    &, & * {
+      cursor: grabbing !important;
+      touch-action: none;
+    }
+  }
+
+  body.lock-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
+}

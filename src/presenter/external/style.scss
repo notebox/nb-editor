@@ -1,0 +1,17 @@
+.ui-btn {
+  color: var(--fg-color);
+  background-color: var(--bg-color);
+
+  &:hover {
+    color: var(--bg-color);
+    background-color: var(--nb-bgcolor-gray);
+  }
+}
+.toolbar-btn {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--fg-color);
+  display: flex;
+  justify-content: center;
+}

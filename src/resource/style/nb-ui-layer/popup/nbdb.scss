@@ -1,0 +1,19 @@
+.ui-popup-header, .ui-popup-footer {
+  font-size: $default-font-size;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.ui-popup-header {
+  padding-bottom: 1rem;
+}
+
+.ui-popup-footer {
+  padding-top: 1rem;
+  .nb-ui-leading {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+}

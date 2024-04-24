@@ -1,0 +1,38 @@
+/** @category color */
+$red: rgba(255, 50, 25, 1);
+$orange: rgba(255, 130, 15, 1);
+$yellow: rgba(255, 180, 0, 1);
+$green: rgba(90, 180, 45, 1);
+$blue: rgba(50, 125, 255, 1);
+$purple: rgba(165, 80, 255, 1);
+$gray: rgba(170, 170, 170, 1);
+
+$bg-red: rgba(255, 20, 0, 0.4);
+$bg-orange: rgba(255, 140, 0, 0.4);
+$bg-yellow: rgba(255, 210, 0, 0.4);
+$bg-green: rgba(130, 200, 80, 0.4);
+$bg-blue: rgba(80, 140, 255, 0.4);
+$bg-purple: rgba(180, 110, 255, 0.4);
+$bg-gray: rgba(160, 160, 160, 0.4);
+
+/** @category font */
+$default-font-size: 18px;
+
+/** @category icon */
+$icon-size: 24px;
+
+/** @category block */
+$block-padding: 4px;
+$block-side: $icon-size;
+$padded-block-side: calc($icon-size + $block-padding);
+
+$nbdb-note-padding-800: calc(50% - 400px);
+$note-padding-800: calc($nbdb-note-padding-800 + $padded-block-side);
+$nbdb-note-padding-1024: calc(624px - 50%);
+$note-padding-1024: calc($nbdb-note-padding-1024 + $padded-block-side);
+$nbdb-note-padding-1248: calc(50% - 512px);
+$note-padding-1248: calc($nbdb-note-padding-1248 + $padded-block-side);
+
+/** @category db-border */
+$db-border-outline: 1px solid var(--fg-color);
+$db-border: 1px solid gray;

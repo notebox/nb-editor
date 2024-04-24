@@ -1,0 +1,70 @@
+@import './common/var.scss';
+
+// scroll
+// html, * {
+  // overscroll-behavior: contain;
+// }
+
+// layout
+html, body {
+  width: 100%;
+  margin: 0;
+}
+
+.nb-root {
+  position: relative; // to use absolute position for child ui layers.
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: -webkit-fill-available;
+  display: flex;
+}
+
+// font
+html, body, .light-theme, .black-theme {
+  font-family: var(--font-family);
+  font-size: $default-font-size;
+}
+
+// default color
+html, body, .light-theme, .black-theme {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+
+// spinner
+.loading-spinner {
+  margin: auto;
+  box-sizing: border-box;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 8px solid transparent;
+  border-top-color: var(--fg-color);
+  border-bottom-color: var(--fg-color);
+  animation: spinner .8s ease infinite;
+}
+
+@keyframes spinner {
+  from {transform: rotate(0deg); }
+  to {transform: rotate(360deg);}
+}
+
+// a tag
+a {
+  color: var(--fg-color);
+  &:visited {
+    color: var(--fg-color);
+  }
+}
+  
+// b tag
+b {
+  font-weight: bolder;
+}
+
+// scroll locker for popup
+body.modal-open {
+  overflow-y: hidden !important;
+  position: fixed !important;
+  padding-right: 15px;
+}

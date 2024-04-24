@@ -1,0 +1,103 @@
+@import '../../common/mixin.scss';
+
+#nb-ui-layer-popup {
+  z-index: 300;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+
+  animation: focus 1s;
+  background-color: var(--thicker-transparent-bg-color);
+
+  padding: 1rem;
+
+  overflow: hidden;
+}
+
+#nb-ui-popup {
+  position: sticky;
+  max-width: max-content;
+  max-height: 80vh;
+
+  animation: genie-lamp 0.1s;
+
+  border: 2px solid var(--fg-color);
+  border-radius: var(--border-radius);
+
+  background-color: var(--transparent-bg-color);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+
+  font-size: 0.9rem;
+
+  overflow: hidden;
+
+  .light-theme {
+    color: black;
+    background-color: white;
+  }
+  .black-theme {
+    color: white;
+    background-color: black;
+  }
+
+  @include no-editable;
+}
+
+/** @category menu **/
+#nb-ui-popup .nb-ui-menu {
+  display: flex;
+  flex-direction: column;
+
+  max-height: 80vh;
+  overflow-y: auto;
+
+  .nb-ui-menu-item {
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--fg-color);
+    }
+
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+
+    [class$="-icon"] {
+      width: 20px;
+      height: 20px;
+      fill: var(--fg-color);
+    }
+  
+    &:hover {
+      background-color: var(--reverse-transparent-bg-color);
+    }
+  }
+}
+
+/** @category common */
+@keyframes genie-lamp {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes focus {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  to {
+    background-color: var(--thicker-transparent-bg-color);
+  }
+}

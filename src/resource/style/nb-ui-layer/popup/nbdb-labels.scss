@@ -1,0 +1,50 @@
+#nb-ui-layer-popup {
+  .nbdb-labels {
+    overflow-y: auto;
+    max-height: 80vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    .nbdb-label {
+      cursor: pointer;
+    }
+  }
+
+  .nbdb-label-editor {
+    border: 1px solid var(--reverse-transparent-bg-color);
+    border-radius: 5px;
+
+    padding: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    .nb-color-picker {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.5rem;
+      gap: 0.2rem;
+
+      .nb-color-option {
+          width: 1.4rem;
+          height: 1.4rem;
+          border: 1px solid var(--fg-color);
+          border-radius: 50%;
+          cursor: pointer;
+        }
+    }
+
+    .nb-ui-btns {
+      display: flex;
+      justify-content: flex-end;
+
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  cursor: default;
+}

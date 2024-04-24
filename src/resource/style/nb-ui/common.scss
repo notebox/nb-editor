@@ -1,0 +1,16 @@
+@mixin circled-icon {
+  border: 1px solid var(--reverse-transparent-bg-color);
+  border-radius: 50%;
+  padding: 2px;
+  width: 12px;
+  height: 12px;
+  font-size: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--reverse-transparent-bg-color);
+  cursor: pointer;
+
+  fill: var(--fg-color);
+}

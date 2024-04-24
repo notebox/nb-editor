@@ -1,0 +1,33 @@
+#nb-ui-layer-popup {
+  #nbdb-field-popup {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 480px;
+
+    select {
+      align-self: stretch;
+      margin: 1rem 0;
+    }
+
+    .nbdb-field-width {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .nb-ui-leading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        margin-right: 0.5rem;
+      }
+    }
+
+    .nbdb-labels-editor, .nbdb-formula-editor {
+      @include parent-scale-height;
+    }
+  }
+}

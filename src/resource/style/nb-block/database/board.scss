@@ -1,0 +1,213 @@
+@import '../../common/var.scss';
+@import '../../common/mixin.scss';
+
+/** @category hover */
+[data-nb-db-template="DB_BOARD"] {
+  $cols-gap: 8px;
+  $col-width: 256px;
+  $col-left: $padded-block-side;
+
+  .nb-db-content {
+    @include no-editable;
+    .nb-db-record, .nb-db-editing-record {
+      .nb-db-field {
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  .nb-db-content {
+    display: flex;
+    gap: $cols-gap;
+
+    .nb-db-col, .nb-db-col-add {
+      border-radius: 2px;
+      padding: 0.5rem 0.5rem 0 0.5rem;
+    }
+
+    .nb-db-col-add {
+      min-width: 3rem;
+    }
+
+    .nb-db-col {
+      flex: 0 0 $col-width;
+
+      &:first-child {
+        margin-left: $icon-size;
+      }
+
+      .nb-db-col-header {
+        display: flex;
+        .nb-db-col-label {
+          display: flex;
+          .nbdb-label {
+            cursor: pointer;
+            &:hover {
+              color: var(--reverse-transparent-bg-color);
+            }
+          }
+        }
+
+        .nbdb-col-aggregation {
+          font-size: 0.8em;
+          padding: 0.2rem 0.5rem;
+          margin: 0 0.5rem;
+          align-self: center;
+          opacity: 0.5;
+
+          @include hover-like-btn;
+        }
+        .nb-db-add-record {
+          &:last-of-type {
+            margin-left: auto;
+          }
+          padding: 0 0.5rem;
+          @include hover-like-btn;
+        }
+      }
+
+      .nbdb-field-adder, .nbdb-record-adder {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        font-size: var(--ui-font-size);
+        @include hover-like-btn;
+      }
+      .nbdb-field-adder {
+        grid-column: 1 / 3;
+      }
+      .nbdb-record-adder {
+        &:nth-child(2) {
+          margin-top: 0.5rem;
+        }
+      }
+
+      .nb-db-record, .nb-db-editing-record {
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        min-height: 4em;
+
+        background-color: var(--bg-color); // for dragging ghost
+
+        margin: 0.5rem 0;
+
+        font-size: 0.8em;
+
+        .nb-db-error {
+          color: red;
+        }
+      }
+
+      .nb-db-record {
+        cursor: pointer;
+        &:hover { background-color: var(--reverse-transparent-bg-color); }
+      }
+
+      .nb-db-editing-record {
+        padding: 0.5rem;
+        .nb-db-editing-record-header {
+          display: flex;
+          justify-content: end;
+          .nb-db-record-more {
+            margin-left: auto;
+            width: 1rem;
+            height: 1rem;
+            padding: 0.2rem;
+            .more-icon {
+              fill: var(--fg-color);
+            }
+            border-radius: var(--border-radius);
+            @include hover-like-btn;
+          }
+        }
+        .nb-db-editing-record-body {
+          display: grid;
+          grid-template-columns: auto auto;
+
+          .nb-db-field {
+            display: contents;
+
+            .nb-db-field-title, .nb-db-field-value {
+              padding: 0.5rem;
+              &:hover {
+                border-radius: var(--border-radius);
+                background-color: var(--reverse-transparent-bg-color) !important;
+              }
+            }
+            .nb-db-field-title {
+              font-size: 0.8em;
+              opacity: 0.8;
+              display: flex;
+              align-items: center;
+
+              display: flex;
+              gap: 0.4rem;
+              cursor: pointer;
+  
+              .field-type {
+                font-size: 0.7rem;
+                width: 0.7rem;
+                height: 0.7rem;
+              }
+  
+              .plus-icon {
+                padding: 0.2rem;
+                margin: 0.2rem 0.5rem 0.2rem 0;
+              }
+
+              span {
+                @include placeholder;
+              }
+            }
+            .nb-db-field-value {
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+
+              &[placeholder="Empty"] {
+                @include placeholder;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nb-db-content {
+    [data-nb-db-col-id].nb-dragging-prev {
+      box-shadow: -0.5rem 0 var(--thick-transparent-accent-color);
+      border-radius: 0 !important;
+    }
+    [data-nb-db-col-id].nb-dragging-next {
+      box-shadow: 0.5rem 0 var(--thick-transparent-accent-color);
+      border-radius: 0 !important;
+    }
+    [data-nb-db-col-id], .nb-db-record {
+      transition: all cubic-bezier(0, 0.5,0,1) 0.3s 0s;
+      transition-property: box-shadow, border-radius;
+    }
+  }
+
+  [data-nb-db-col-id].nb-dragging-at {
+    box-shadow: inset 0 0 0 0.5rem var(--thick-transparent-accent-color);
+  }
+
+  .nb-db-record {
+    &.nb-dragging-prev {
+      box-shadow: var(--box-shadow), 0 -0.5rem var(--thick-transparent-accent-color);
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    }
+
+    &.nb-dragging-next {
+      box-shadow: var(--box-shadow), 0 0.5rem var(--thick-transparent-accent-color) !important;
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+
+    transition: all cubic-bezier(0, 0.5, 0, 1) 0.3s 0s;
+    transition-property: box-shadow, border-radius;
+  }
+}

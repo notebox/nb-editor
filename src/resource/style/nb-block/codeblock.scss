@@ -1,0 +1,35 @@
+@import './prismjs/prism-okaidia.scss';
+@import './prismjs/prism.scss';
+
+.nb-editor, .nb-ui-layer {
+  [data-nb-block-type="CODEBLOCK"] {
+    .nb-block-content > div {
+      @include embed-frame;
+      display: flex;
+      flex-direction: column;
+      font-family: monospace;
+
+      .language {
+        margin: 1em;
+        padding: 4px;
+        font-size: 0.8em;
+        align-self: flex-end;
+        cursor: pointer;
+        @include embed-frame;
+      }
+
+      .code {
+        flex: 1;
+        display: flex;
+        overflow-x: auto;
+        [data-nb-dom-type="text"] {
+          padding: 1em;
+          flex: 1 0 auto;
+          word-wrap: break-word;
+          word-break: keep-all;
+          line-height: 1.5em;
+        }
+      }
+    }
+  }
+}

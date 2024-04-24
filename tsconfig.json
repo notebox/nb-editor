@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "declaration": true,
+    "lib": [
+      "dom",                        // domain
+      "dom.iterable",               // domain
+      "esnext"
+    ],
+    "module": "NodeNext",           // domain
+    "moduleResolution": "NodeNext", // domain
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "pretty": true,
+    "skipLibCheck": true,           // domain
+    "sourceMap": true,
+    "strict": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "esModuleInterop": true,
+    "target": "esnext"
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ],
+  "exclude": [
+    "**/node_modules",
+  ]
+}

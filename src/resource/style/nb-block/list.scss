@@ -1,0 +1,63 @@
+@import '../common/mixin.scss';
+
+.nb-editor, .nb-ui-layer {
+  [data-nb-block-type="UL"], [data-nb-block-type="OL"], [data-nb-block-type="CL"] {
+    .nb-ul, .nb-ol, .nb-cl {
+      display: flex;
+      align-items: flex-start;
+      [contenteditable="false"] {
+        @include pre-text-symbol;
+        font-family: monospace;
+        margin-right: 0.4em;
+      }
+      [data-nb-dom-type="text"] {
+        flex-grow: 1; /** @purpose magic to fix the caret cutting predecessor char issue in Safari */
+      }
+    }
+
+    .nb-ul {
+      [contenteditable="false"] {
+        position: relative;
+        font-family: var(--font-family);
+      }
+    }
+
+    .nb-ol {
+      [contenteditable="false"] {
+        position: relative;
+        div {
+          min-width: $icon-size;
+          position: absolute;
+          right: 0px;
+          text-align: right;
+          font-size: 0.9em;
+          font-weight: bolder;
+        }
+      }
+    }
+
+    .nb-cl {
+      [contenteditable="false"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      &.done {
+        [data-nb-dom-type="text"] {
+          text-decoration: line-through;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+.nb-editor[contenteditable="false"] {
+    .nb-cl {
+      [contenteditable="false"] {
+        cursor: default !important;
+      }
+    }
+}

@@ -1,0 +1,67 @@
+#nb-mermaid-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  overflow: hidden;
+
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  justify-content: stretch;
+  align-items: stretch;
+
+  flex: 1;
+
+  .nb-diagram-container {
+    border: 1px solid var(--fg-color);
+    background-color: var(--bg-color);
+
+    flex: 1;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .nb-img-container {
+      touch-action: auto;
+      overflow-x: scroll;
+      overflow-y: scroll;
+      max-height: 100%;
+      max-width: 100%;
+
+      img {
+        margin: 1rem;
+      }
+    }
+  }
+  .nb-ui-footer {
+    display: flex;
+    align-self: stretch;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 2rem;
+
+    input {
+      flex: 1;
+      -webkit-appearance: none;
+      height: 2px;
+      background-color: var(--fg-color);
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background-color: var(--bg-color);
+        border: 2px solid var(--fg-color);
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import "../common/mixin.scss";
+
+.nb-editor,
+.nb-ui-layer {
+  [data-nb-dom-type="text"] {
+    // line-height: 1.5; // removed for unwanted highlighted selection.
+
+    /** @purpose word-break + break-all */
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    /** @purpose to prevent empty text height to be zero */
+    @include placeholder;
+
+    /** @purpose selection */
+    outline: none;
+    cursor: text;
+    @include selectable(text);
+
+    /** @purpose space */
+    -webkit-user-modify: read-write;
+    // -webkit-user-modify: read-write-plaintext-only;
+    // line-break: anywhere;
+
+    a {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    .nb-inline-code {
+      font-size: 0.8em;
+      background-color: rgba(128, 128, 128, 0.3);
+      padding: 0.1em 4px;
+      margin: 0 2px;
+      border-radius: 4px;
+
+      &+.nb-inline-code {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding-left: 0;
+        margin-left: 0;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:has(+ .nb-inline-code) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding-right: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.nb-editor[contenteditable="false"] {
+  [data-nb-dom-type="text"] {
+    -webkit-user-modify: read-only !important;
+  }
+}

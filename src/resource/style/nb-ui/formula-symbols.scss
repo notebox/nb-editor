@@ -1,0 +1,50 @@
+div[class^="nbdb-symbol-"] {
+  flex-shrink: 0;
+
+  border-radius: 2px;
+  border: 1px solid var(--reverse-transparent-bg-color);
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-style: italic;
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 100;
+
+  &.nbdb-symbol-bool {
+    background-color: var(--nb-bgcolor-blue);
+  }
+
+  &.nbdb-symbol-date {
+    background-color: var(--nb-bgcolor-purple);
+  }
+
+  &.nbdb-symbol-number {
+    background-color: var(--nb-bgcolor-orange);
+  }
+
+  &.nbdb-symbol-string {
+    background-color: var(--nb-bgcolor-green);
+  }
+
+  &.nbdb-symbol-any {
+    background-color: var(--nb-bgcolor-gray);
+  }
+
+  &.nbdb-symbol-label {
+    background-color: var(--nb-bgcolor-yellow);
+  }
+
+  &.nbdb-symbol-labels {
+    background-color: var(--nb-bgcolor-yellow);
+  }
+}
+
+.nb-ui-list-item, .nbdb-formula-selector-option-header {
+  div[class^="nbdb-symbol-"] {
+    margin-right: 0.4rem;
+  }
+}
