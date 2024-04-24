@@ -46,3 +46,6 @@ as a iframe resource
   - `iframe/index.html`
   - `iframe/static/app.js`
   - `iframe/static/app.css`
+
+## Demo Screenshots
+<img src="https://github.com/notebox/nb-editor/assets/8125241/e4c8ccca-ad68-42d6-b8d6-e87e320fc77d" height=480>
