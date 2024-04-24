@@ -41,4 +41,4 @@ jobs:
       uses: codecov/codecov-action@v4
       with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: notebox/nb-crdt
+          slug: notebox/nb-editor
