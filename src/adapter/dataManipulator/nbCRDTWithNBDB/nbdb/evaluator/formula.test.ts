@@ -8,6 +8,7 @@ describe("formula evaluator", () => {
 
   beforeAll(() => {
     testDI(stateData)
+    process.env.TZ = "UTC"
     subject = new FormulaEvaluator()
   })
 
@@ -225,7 +226,7 @@ describe("formula evaluator", () => {
         NBDBString.toData(
           subject.startDate(["", ["fromTimestamp", "1641300863123"]])
         )
-      ).toBe("2022-01-04T21:54")
+      ).toBe("2022-01-04T12:54")
       expect(subject.startDate(["", true]).D).toBe(null)
     })
 
@@ -251,13 +252,13 @@ describe("formula evaluator", () => {
 
     it("timestamp", () => {
       expect(subject.timestamp(["", "2022-01-08T01:02"]).S).toBe(
-        "1641571320000"
+        "1641603720000"
       )
     })
 
     it("fromTimestamp", () => {
       expect(
-        NBDBString.toData(subject.fromTimestamp(["", "1641571320000"]))
+        NBDBString.toData(subject.fromTimestamp(["", "1641603720000"]))
       ).toBe("2022-01-08T01:02")
     })
 
