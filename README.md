@@ -3,7 +3,7 @@
 [![codecov](https://codecov.io/gh/notebox/nb-editor/graph/badge.svg?token=65QQDKPEPV)](https://codecov.io/gh/notebox/nb-editor)
 [![sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/notebox)
 
-A block based editor which is compatible with Conflict-free Replicated Data Type that enables collaborative editing across multiple participants allowing for flexible data sharing across spreadsheets, boards, rich text, and more.
+A block based editor which is powered by [nb-crdt](https://github.com/notebox/nb-crdt) that enables collaborative editing across multiple participants allowing for flexible data sharing across spreadsheets, boards, rich text, and more.
 
 Web-based multi-platform support (primarily focusing on macOS and iOS). Support for Composition input, such as Korean and Japanese, suggestion input, and iPad Pencil scribble.
 
